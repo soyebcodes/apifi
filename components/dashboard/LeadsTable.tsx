@@ -8,7 +8,11 @@ interface Lead {
   createdAt: string;
 }
 
-export default function LeadsTable() {
+interface LeadsTableProps {
+  limit?: number; // optional, defaults to all
+}
+
+export default function LeadsTable({ limit }: LeadsTableProps) {
   const [leads, setLeads] = useState<Lead[]>([]);
 
   useEffect(() => {
@@ -20,6 +24,10 @@ export default function LeadsTable() {
     fetchLeads();
   }, []);
 
+  const displayedLeads = limit
+    ? leads.slice(-limit).reverse()
+    : leads.reverse();
+
   return (
     <div className="overflow-x-auto rounded-lg border bg-white dark:bg-gray-800 p-4">
       <table className="w-full border-collapse text-left">
@@ -30,7 +38,7 @@ export default function LeadsTable() {
           </tr>
         </thead>
         <tbody>
-          {leads.map((lead) => (
+          {displayedLeads.map((lead) => (
             <tr
               key={lead._id}
               className="border-b hover:bg-gray-50 dark:hover:bg-gray-700"
