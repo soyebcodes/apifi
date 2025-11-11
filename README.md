@@ -1,6 +1,6 @@
 # APiFi – Next.js SaaS Landing + Dashboard
 
-APiFi is a modern, production-ready SaaS starter template built with Next.js 14, React 18, and Tailwind CSS. It comes with a landing page for lead capture, a protected admin dashboard, Clerk authentication, MongoDB integration, and rich UI components.
+APiFi is a modern, production-ready SaaS starter template built with Next.js 16, React 19, and Tailwind CSS. It comes with a landing page for lead capture, a protected admin dashboard, Clerk authentication, MongoDB integration, and rich UI components.
 
 ---
 
