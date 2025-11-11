@@ -26,37 +26,48 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-24 border-b">
-      <div className="">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center">
-          Powerful Features for Modern SaaS
-        </h2>
+    <section id="features" className="py-24 md:py-32 border-b border-border">
+      <div className="container mx-auto space-y-12 px-6">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center space-y-4 max-w-2xl mx-auto"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Powerful Features for Modern SaaS
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Everything you need to launch your product, collect leads, and run
+            an admin dashboard.
+          </p>
+        </motion.div>
 
-        <p className="mt-4 text-muted-foreground text-center max-w-2xl mx-auto">
-          Everything you need to launch your product, collect leads, and run an
-          admin dashboard.
-        </p>
-
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
+        {/* Features cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {features.map((item, idx) => {
             const Icon = item.icon;
-
             return (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                className="flex"
               >
-                <Card className="rounded-2xl border shadow-sm hover:shadow-md transition">
-                  <CardHeader>
-                    <Icon className="h-8 w-8 text-primary" />
-                    <CardTitle className="mt-4">{item.title}</CardTitle>
+                <Card className="flex-1 rounded-xl border border-border shadow-sm hover:shadow-md hover:border-primary/20 transition-all">
+                  <CardHeader className="space-y-4">
+                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">{item.title}</CardTitle>
                   </CardHeader>
-
                   <CardContent>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
