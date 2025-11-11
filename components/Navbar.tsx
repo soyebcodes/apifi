@@ -16,7 +16,7 @@ export default function Navbar() {
           <Link href="#features">Features</Link>
           <Link href="#pricing">Pricing</Link>
           <Link href="#testimonials">Testimonials</Link>
-          <Link href="#signup">
+          <Link href="/sign-up">
             <Button variant="default">Get Started</Button>
           </Link>
         </div>
