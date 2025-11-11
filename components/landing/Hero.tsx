@@ -71,7 +71,7 @@ export function Hero() {
             <p className="mt-3 text-green-600">Thanks! You’re added.</p>
           )}
           {status === "dup" && (
-            <p className="mt-3 text-yellow-600">You've already joined!</p>
+            <p className="mt-3 text-yellow-600">You&apos;ve already joined!</p>
           )}
           {status === "err" && (
             <p className="mt-3 text-red-600">Something went wrong.</p>
