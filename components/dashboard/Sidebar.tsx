@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useClerk } from "@clerk/nextjs";
+import { ModeToggle } from "../ModeToggle";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -17,7 +18,7 @@ export default function Sidebar() {
   return (
     <aside className="w-64 bg-white dark:bg-gray-800 border-r p-6 flex flex-col">
       <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-        Acme Dashboard
+        ApiFi Dashboard
       </h2>
       <nav className="flex-1 flex flex-col gap-2">
         {links.map((link) => (
@@ -34,13 +35,16 @@ export default function Sidebar() {
           </Link>
         ))}
       </nav>
-      <Button
-        variant="destructive"
-        className="mt-auto"
-        onClick={() => signOut({ redirectUrl: "/" })}
-      >
-        Sign Out
-      </Button>
+      <div className="flex justify-between">
+        <Button
+          variant="destructive"
+          className="mt-auto"
+          onClick={() => signOut({ redirectUrl: "/" })}
+        >
+          Sign Out
+        </Button>
+        <ModeToggle />
+      </div>
     </aside>
   );
 }

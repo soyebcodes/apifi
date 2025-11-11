@@ -47,8 +47,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-4 text-lg text-muted-foreground">
-            A modern landing page + dashboard starter built with Next.js,
-            Tailwind, Clerk, and MongoDB.
+            Join hundreds of founders using ApiFi to supercharge their SaaS
+            development with ready-made APIs.
           </p>
 
           <form className="mt-8 flex gap-3" onSubmit={submit}>
@@ -84,9 +84,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="hidden lg:block"
-        >
-          <div className="h-64 w-full bg-muted rounded-2xl" />
-        </motion.div>
+        ></motion.div>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import Sidebar from "@/components/dashboard/Sidebar";
-import { useUser, SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
+import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
 
 export default function DashboardLayout({
   children,
